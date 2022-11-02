@@ -1,6 +1,5 @@
 # cloud-platform-terraform-descheduler
 
-
 ## Usage
 
 _Describe how to use the module_
