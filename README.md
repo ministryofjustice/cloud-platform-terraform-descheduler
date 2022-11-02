@@ -1,9 +1,17 @@
 # cloud-platform-terraform-descheduler
 
+[![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-descheduler/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-descheduler/releases)
+
+This terraform module installs the [Descheduler](https://github.com/kubernetes-sigs/descheduler#descheduler-for-kubernetes) for Kubernetes. 
+
+Descheduler, based on its policies, finds pods that can be moved and evicts them. These evicted pods are scheduled on nodes are that more suited (based on the polices used to evict them) 
 ## Usage
 
-_Describe how to use the module_
-See the [examples/](examples/) folder.
+```hcl
+module "descheduler" {
+  source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref="
+}
+```
 
 <!--- BEGIN_TF_DOCS --->
 ## Requirements
