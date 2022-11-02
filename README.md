@@ -1,6 +1,5 @@
 # cloud-platform-terraform-descheduler
 
-
 ## Usage
 
 _Describe how to use the module_
@@ -12,18 +11,23 @@ See the [examples/](examples/) folder.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | n/a |
 
 ## Modules
 
 No modules.
 
 ## Resources
+
+| Name | Type |
+|------|------|
+| [helm_release.descheduler](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 
 ## Inputs
 
