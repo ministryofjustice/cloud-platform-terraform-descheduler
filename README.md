@@ -12,6 +12,18 @@ module "descheduler" {
   source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref="
 }
 ```
+## Enabled Policies
+
+### RemoveDuplicates
+
+This strategy makes sure that there is only one pod associated with a ReplicaSet (RS), ReplicationController (RC), StatefulSet, or Job running on the same node.
+
+### LowNodeUtilization
+
+This strategy finds nodes that are underutilised and evicts pods from overutilised nodes in the hope that recreation of evicted pods will be scheduled on these underutilised nodes. 
+
+The underutilisation of nodes is determined by a configurable `threshold` thresholds. The `threshold` thresholds can be configured for cpu, memory, number of pods, and extended resources in terms of percentage (the percentage is calculated as the current resources requested on the node vs total allocatable. For pods, this means the number of pods on the node as a fraction of the pod capacity set for that node).
+
 
 <!--- BEGIN_TF_DOCS --->
 ## Requirements
