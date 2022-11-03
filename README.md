@@ -9,7 +9,7 @@ Descheduler, based on its policies, finds pods that can be moved and evicts them
 
 ```hcl
 module "descheduler" {
-  source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref="
+  source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref=0.0.2"
 }
 ```
 ## Enabled Policies
