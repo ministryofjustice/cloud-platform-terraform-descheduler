@@ -1,5 +1,5 @@
 locals {
-  deschduler-version = "v0.23.1"
+  deschduler-version = "0.23.1"
 }
 
 resource "helm_release" "descheduler" {
