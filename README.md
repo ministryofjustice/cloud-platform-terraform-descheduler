@@ -30,7 +30,7 @@ The underutilisation of nodes is determined by a configurable `threshold` thresh
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.5 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | >=2.6.0 |
 
 ## Providers
