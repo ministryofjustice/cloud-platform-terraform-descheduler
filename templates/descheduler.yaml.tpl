@@ -8,7 +8,7 @@ kind: Deployment
 image:
   repository: k8s.gcr.io/descheduler/descheduler
   # Overrides the image tag whose default is the chart version
-  tag:
+  # tag:
   pullPolicy: IfNotPresent
 
 imagePullSecrets:
