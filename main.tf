@@ -9,7 +9,6 @@ resource "helm_release" "descheduler" {
   namespace  = "kube-system"
   version    = local.descheduler-version
 
-  values = [
-    "${path.module}/templates/descheduler.yaml.tpl"
-  ]
+    values = [templatefile("${path.module}/templates/descheduler.yaml.tpl", {
+  })]
 }
