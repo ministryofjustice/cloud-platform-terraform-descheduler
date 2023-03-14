@@ -65,8 +65,10 @@ deschedulerPolicy:
   # ignorePvcPods: true
   # evictLocalStoragePods: true
   strategies:
+%{ if disable_removeduplicates ~}
     RemoveDuplicates:
-      enabled: true
+      enabled: false
+%{ endif ~}
     RemovePodsHavingTooManyRestarts:
       enabled: false
       params:
