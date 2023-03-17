@@ -53,7 +53,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_enable_removeduplicates"></a> [enable\_removeduplicates](#input\_enable\_removeduplicates) | A single string to fix issue 'Concourse erroring ProcessNotFoundError #4433'. Possible values are true, false. For the workspace 'Manager' only 'Remove Duplicates will be set to 'false' | `bool` | `true` | no |
+| <a name="input_enable_removeduplicates"></a> [enable\_removeduplicates](#input\_enable\_removeduplicates) | Enable RemoveDuplicates which spreads pods across cluster, for cluster wtih number of nodes < number of pods, set it to false | `bool` | `true` | no |
 
 ## Outputs
 
