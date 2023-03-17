@@ -1,5 +1,5 @@
  variable "enable_removeduplicates" {
-  description = "A single string to fix issue 'Concourse erroring ProcessNotFoundError #4433'. Possible values are true, false. For the workspace 'Manager' only 'Remove Duplicates will be set to 'false'"
+  description = "Enable RemoveDuplicates which spreads pods across cluster, for cluster wtih number of nodes < number of pods, set it to false"
   default     = true
   type        = bool
 }
