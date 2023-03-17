@@ -51,7 +51,9 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_enable_removeduplicates"></a> [enable\_removeduplicates](#input\_enable\_removeduplicates) | Enable RemoveDuplicates which spreads pods across cluster, for cluster wtih number of nodes < number of pods, set it to false | `bool` | `true` | no |
 
 ## Outputs
 

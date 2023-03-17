@@ -66,7 +66,7 @@ deschedulerPolicy:
   # evictLocalStoragePods: true
   strategies:
     RemoveDuplicates:
-      enabled: true
+      enabled: ${enable_removeduplicates}
     RemovePodsHavingTooManyRestarts:
       enabled: false
       params:
