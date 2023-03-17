@@ -51,7 +51,9 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_disable_removeduplicates"></a> [disable\_removeduplicates](#input\_disable\_removeduplicates) | A single string to fix issue 'Concourse erroring ProcessNotFoundError #4433'. Possible values are true, false. For the workspace 'Manager' only 'Remove Duplicates will be set to 'false' | `string` | `"true"` | no |
 
 ## Outputs
 
