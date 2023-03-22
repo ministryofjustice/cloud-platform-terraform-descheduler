@@ -67,6 +67,10 @@ deschedulerPolicy:
   strategies:
     RemoveDuplicates:
       enabled: ${enable_removeduplicates}
+      params:
+        namespaces:
+          exclude:
+          - concourse
     RemovePodsHavingTooManyRestarts:
       enabled: false
       params:
@@ -98,6 +102,10 @@ deschedulerPolicy:
             cpu: 85
             memory: 85
             pods: 90
+          evictableNamespaces:
+            namespaces:
+              exclude:
+              - concourse
 
 priorityClassName: system-cluster-critical
 
