@@ -98,6 +98,14 @@ deschedulerPolicy:
             cpu: 85
             memory: 85
             pods: 90
+    HighNodeUtilization:
+      enabled: true
+      params:
+        nodeResourceUtilizationThresholds:
+          thresholds:
+            cpu: 10
+            memory: 10
+            pods: 20
 
 priorityClassName: system-cluster-critical
 
