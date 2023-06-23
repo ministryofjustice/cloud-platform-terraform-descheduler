@@ -103,8 +103,8 @@ deschedulerPolicy:
       params:
         nodeResourceUtilizationThresholds:
           thresholds:
-            cpu: 10
-            memory: 10
+            cpu: 15
+            memory: 15
             pods: 20
 
 priorityClassName: system-cluster-critical
