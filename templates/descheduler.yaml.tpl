@@ -185,3 +185,7 @@ serviceMonitor:
     #   targetLabel: nodename
     #   replacement: $1
     #   action: replace
+
+podSecurityPolicy:
+  # Specifies whether PodSecurityPolicy should be created.
+  create: false
