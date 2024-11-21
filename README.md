@@ -30,7 +30,7 @@ This strategy finds nodes that are underutilised and evicts pods from the nodes 
 
 Used in conjunction with node auto-scaling, this strategy is intended to help trigger down scaling of under utilized nodes
 
-<!--- BEGIN_TF_DOCS --->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -63,8 +63,7 @@ No modules.
 ## Outputs
 
 No outputs.
-
-<!--- END_TF_DOCS --->
+<!-- END_TF_DOCS -->
 
 ## Tags
 
