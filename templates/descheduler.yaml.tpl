@@ -56,7 +56,7 @@ replicas: 1
 #   resourceNamescape: "kube-system"
 
 cmdOptions:
-  v: 3
+  v: 4
 
 deschedulerPolicy:
   # nodeSelector: "key1=value1,key2=value2"
@@ -64,6 +64,49 @@ deschedulerPolicy:
   # maxNoOfPodsToEvictPerNamespace: 10
   # ignorePvcPods: true
   # evictLocalStoragePods: true
+  profiles:
+    - name: default
+      pluginConfig:
+      - args:
+          evictLocalStoragePods: true
+          ignorePvcPods: true
+          nodeFit: true
+        name: DefaultEvictor
+      - name: RemoveDuplicates
+      - args:
+          includingInitContainers: true
+          podRestartThreshold: 100
+        name: RemovePodsHavingTooManyRestarts
+      - args:
+          nodeAffinityType:
+          - requiredDuringSchedulingIgnoredDuringExecution
+        name: RemovePodsViolatingNodeAffinity
+      - name: RemovePodsViolatingNodeTaints
+      - name: RemovePodsViolatingInterPodAntiAffinity
+      - name: RemovePodsViolatingTopologySpreadConstraint
+      - args:
+          targetThresholds:
+            cpu: 50
+            memory: 50
+            pods: 50
+          thresholds:
+            cpu: 20
+            memory: 20
+            pods: 20
+        name: LowNodeUtilization
+      plugins:
+        balance:
+          enabled:
+          - RemoveDuplicates
+          - RemovePodsViolatingTopologySpreadConstraint
+          - LowNodeUtilization
+        deschedule:
+          enabled:
+          - RemovePodsHavingTooManyRestarts
+          - RemovePodsViolatingNodeTaints
+          - RemovePodsViolatingNodeAffinity
+          - RemovePodsViolatingInterPodAntiAffinity
+
   strategies:
     RemoveDuplicates:
       enabled: ${enable_removeduplicates}
