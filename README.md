@@ -2,14 +2,14 @@
 
 [![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-descheduler/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-descheduler/releases)
 
-This terraform module installs the [Descheduler](https://github.com/kubernetes-sigs/descheduler#descheduler-for-kubernetes) for Kubernetes. 
+This terraform module installs the [Descheduler](https://github.com/kubernetes-sigs/descheduler#descheduler-for-kubernetes) for Kubernetes.
 
-Descheduler, based on its policies, finds pods that can be moved and evicts them. These evicted pods are scheduled on nodes are that more suited (based on the policies used to evict them) 
+Descheduler, based on its policies, finds pods that can be moved and evicts them. These evicted pods are scheduled on nodes are that more suited (based on the policies used to evict them)
 ## Usage
 
 ```hcl
 module "descheduler" {
-  source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref=0.0.2"
+  source = "github.com/ministryofjustice/cloud-platform-terraform-descheduler?ref=0.32.2"
 }
 ```
 ## Enabled Policies
@@ -20,13 +20,13 @@ This strategy makes sure that there is only one pod associated with a ReplicaSet
 
 ### LowNodeUtilization
 
-This strategy finds nodes that are underutilised and evicts pods from overutilised nodes in the hope that recreation of evicted pods will be scheduled on these underutilised nodes. 
+This strategy finds nodes that are underutilised and evicts pods from overutilised nodes in the hope that recreation of evicted pods will be scheduled on these underutilised nodes.
 
 The underutilisation of nodes is determined by a configurable `threshold` thresholds. The `threshold` thresholds can be configured for cpu, memory, number of pods, and extended resources in terms of percentage (the percentage is calculated as the current resources requested on the node vs total allocatable. For pods, this means the number of pods on the node as a fraction of the pod capacity set for that node).
 
 ### HighNodeUtilization
 
-This strategy finds nodes that are underutilised and evicts pods from the nodes in the hope that these pods will be scheduled compactly into fewer nodes. 
+This strategy finds nodes that are underutilised and evicts pods from the nodes in the hope that these pods will be scheduled compactly into fewer nodes.
 
 Used in conjunction with node auto-scaling, this strategy is intended to help trigger down scaling of under utilized nodes
 
