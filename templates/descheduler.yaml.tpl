@@ -18,9 +18,9 @@ resources:
   requests:
     cpu: 500m
     memory: 256Mi
-  # limits:
-  #   cpu: 1000m
-  #   memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
 
 nameOverride: ""
 fullnameOverride: ""
@@ -46,7 +46,7 @@ replicas: 1
 
 # Specifies whether Leader Election resources should be created
 # Required when running as a Deployment
-# leaderElection: 
+# leaderElection:
 #   enabled: true
 #   leaseDuration: 15s
 #   renewDeadline: 10s
