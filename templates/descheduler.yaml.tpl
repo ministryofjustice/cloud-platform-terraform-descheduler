@@ -56,7 +56,7 @@ replicas: 1
 #   resourceNamescape: "kube-system"
 
 cmdOptions:
-  v: 3
+  v: 5
 
 deschedulerPolicy:
   profiles:
