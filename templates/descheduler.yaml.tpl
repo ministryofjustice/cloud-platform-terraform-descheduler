@@ -56,49 +56,49 @@ replicas: 1
 #   resourceNamescape: "kube-system"
 
 cmdOptions:
-  v: 5
+  v: 3
 
 deschedulerPolicy:
   profiles:
-  name: cp-default
-  pluginConfig:
-    - name: DefaultEvictor
-    - name: RemoveDuplicates
-    - name: RemovePodsHavingTooManyRestarts
-      args:
-        podRestartThreshold: 100
-        includingInitContainers: true
-    - name: RemovePodsViolatingNodeAffinity
-      args:
-        nodeAffinityType:
-        - requiredDuringSchedulingIgnoredDuringExecution
-    - name: RemovePodsViolatingNodeTaints
-    - name: RemovePodsViolatingInterPodAntiAffinity
-    - name: RemovePodsViolatingTopologySpreadConstraint
-    - name: LowNodeUtilization
-      args:
-        thresholds:
-          cpu: 70
-          memory: 70
-          pods: 75
-        targetThresholds:
-          cpu: 85
-          memory: 85
-          pods: 90
-    - name: HighNodeUtilization
-      args:
-        thresholds:
-          cpu: 15
-          memory: 15
-          pods: 20
-  plugins:
-    balance:
-      enabled:
-        - RemoveDuplicates
-        - LowNodeUtilization
-        - HighNodeUtilization
-    deschedule:
-      enabled:
+  - name: cp-default
+    pluginConfig:
+      - name: DefaultEvictor
+      - name: RemoveDuplicates
+      - name: RemovePodsHavingTooManyRestarts
+        args:
+          podRestartThreshold: 100
+          includingInitContainers: true
+      - name: RemovePodsViolatingNodeAffinity
+        args:
+          nodeAffinityType:
+          - requiredDuringSchedulingIgnoredDuringExecution
+      - name: RemovePodsViolatingNodeTaints
+      - name: RemovePodsViolatingInterPodAntiAffinity
+      - name: RemovePodsViolatingTopologySpreadConstraint
+      - name: LowNodeUtilization
+        args:
+          thresholds:
+            cpu: 70
+            memory: 70
+            pods: 75
+          targetThresholds:
+            cpu: 85
+            memory: 85
+            pods: 90
+      - name: HighNodeUtilization
+        args:
+          thresholds:
+            cpu: 15
+            memory: 15
+            pods: 20
+    plugins:
+      balance:
+        enabled:
+          - RemoveDuplicates
+          - LowNodeUtilization
+          - HighNodeUtilization
+      deschedule:
+        enabled:
 
 priorityClassName: system-cluster-critical
 
