@@ -83,7 +83,7 @@ deschedulerPolicy:
             pods: 75
           targetThresholds:
             cpu: 85
-            memory: 85
+            memory: 80
             pods: 90
       - name: HighNodeUtilization
         args:
