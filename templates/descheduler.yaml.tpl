@@ -59,6 +59,7 @@ cmdOptions:
   v: 3
 
 deschedulerPolicy:
+  nodeSelector: "cloud-platform.justice.gov.uk/default-ng=true"
   profiles:
   - name: cp-default
     pluginConfig:
