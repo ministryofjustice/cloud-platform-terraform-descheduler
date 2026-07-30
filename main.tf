@@ -2,7 +2,6 @@ locals {
   descheduler-version = "0.34.0"
 }
 
-
 resource "helm_release" "descheduler" {
   name       = "descheduler"
   repository = "https://kubernetes-sigs.github.io/descheduler/"
