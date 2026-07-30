@@ -1,5 +1,5 @@
 locals {
-  descheduler-version = "0.33.0"
+  descheduler-version = "0.34.0"
 }
 
 resource "helm_release" "descheduler" {
@@ -9,7 +9,7 @@ resource "helm_release" "descheduler" {
   namespace  = "kube-system"
   version    = local.descheduler-version
 
-    values = [templatefile("${path.module}/templates/descheduler.yaml.tpl", {
-               enable_removeduplicates  =    var.enable_removeduplicates
+  values = [templatefile("${path.module}/templates/descheduler.yaml.tpl", {
+    enable_removeduplicates = var.enable_removeduplicates
   })]
 }
